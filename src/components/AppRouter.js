@@ -9,7 +9,6 @@ import HeroUpdate from "./forms/HeroUpdate";
 import CardView from "./CardHero/CardView";
 
 class AppRouter extends Component {
-  state = {};
   render() {
     return (
       <BrowserRouter>

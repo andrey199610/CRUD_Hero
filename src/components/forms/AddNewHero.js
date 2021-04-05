@@ -35,19 +35,10 @@ class AddNewHero extends Component {
       superpowers: this.state.superpowers,
       catch_phrase: this.state.catch_phrase,
     };
-
     firebase
       .database()
       .ref("herodata/" + id)
       .set(newHero);
-    this.setState({
-      nickname: "",
-      imagesUrl: "",
-      real_name: "",
-      origin_description: "",
-      superpowers: "",
-      catch_phrase: "",
-    });
     this.props.history.push("/list");
   }
 
@@ -69,6 +60,7 @@ class AddNewHero extends Component {
               placeholder="nickname"
               onChange={this.onInputChange}
               name="nickname"
+              required
             />
             <br />
             <Form.Control
@@ -78,6 +70,7 @@ class AddNewHero extends Component {
               value={this.state.imagesUrl}
               name="imagesUrl"
               onChange={this.onInputChange}
+              required
             />
             <br />
             <Form.Control
@@ -87,6 +80,7 @@ class AddNewHero extends Component {
               onChange={this.onInputChange}
               name="real_name"
               placeholder="real_name"
+              required
             />
             <br />
             <Form.Control
@@ -96,6 +90,7 @@ class AddNewHero extends Component {
               onChange={this.onInputChange}
               name="origin_description"
               placeholder="origin_description"
+              required
             />
             <br />
             <Form.Control
@@ -105,6 +100,7 @@ class AddNewHero extends Component {
               onChange={this.onInputChange}
               name="superpowers"
               placeholder="superpowers"
+              required
             />
 
             <br />
@@ -115,6 +111,7 @@ class AddNewHero extends Component {
               onChange={this.onInputChange}
               name="catch_phrase"
               placeholder="catch_phrase"
+              required
             />
             <br />
             <Button variant="primary" type="submit" value="add">
